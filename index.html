@@ -13,11 +13,14 @@
 <!-- Step 1: Create the containing elements. -->
 
 <section id="auth-button"></section>
-<section id="view-selector"></section>
+
+<h3>Events Timeline</h3>
+<br />
 <section id="timeline"></section>
+
+<h3>Events Table</h3>
+<br />
 <section id="events-table"></section>
-<section id="ad-table"></section>
-<section id="goal-chart"></section>
 
 <!-- Step 2: Load the library. -->
 
@@ -51,9 +54,10 @@ gapi.analytics.ready(function() {
     query: {
       'ids': viewId,
       'dimensions': 'ga:date',
-      'metrics': 'ga:sessions',
+      'metrics': 'ga:uniqueEvents',
       'start-date': '90daysAgo',
       'end-date': 'yesterday',
+      'filters':'ga:eventCategory%3D~%5EBrightCove'
     },
     chart: {
       type: 'LINE',
@@ -68,10 +72,11 @@ gapi.analytics.ready(function() {
     reportType: 'ga',
     query: {
       'ids': viewId,
-      'dimensions': 'ga:eventCategory,ga:eventAction',
-      'metrics': 'ga:totalEvents,ga:uniqueEvents',
+      'dimensions': 'ga:eventAction,ga:eventLabel',
+      'metrics': 'ga:uniqueEvents',
       'start-date': '90daysAgo',
       'end-date': 'yesterday',
+	'filters':'ga:eventCategory%3D~%5EBrightCove'
     },
     chart: {
       type: 'TABLE',
