@@ -5,7 +5,7 @@
 	<title>Google Analytics Embed</title>
 </head>
 <body>
-<h1>3:15</h1>
+<h1>Video Playback Report</h1>
 
 
 
@@ -13,11 +13,13 @@
 
 <section id="auth-button"></section>
 
-<h3>Events Timeline</h3>
+<h3>Timeline of Videos Played</h3>
+<p>This chart shows a timeline of events in the last 14 days with an event category of "BrightCove Player" and an event action of "Media Play."</p>
 <br />
 <section id="timeline"></section>
 
 <h3>Events Table</h3>
+<p>This table shows videos played (event label) in the last 14 days with a category of "BrightCove Player" and an action of "Media Play."</p>
 <br />
 <section id="events-table"></section>
 
@@ -54,7 +56,7 @@ gapi.analytics.ready(function() {
       'ids': viewId,
       'dimensions': 'ga:date',
       'metrics': 'ga:uniqueEvents',
-      'start-date': '90daysAgo',
+      'start-date': '14daysAgo',
       'end-date': 'yesterday',
 	'filters':'ga:eventCategory=~BrightCove Player;ga:eventAction=~Media Play'
 	    },
@@ -73,7 +75,7 @@ gapi.analytics.ready(function() {
       'ids': viewId,
       'dimensions': 'ga:eventAction,ga:eventLabel',
       'metrics': 'ga:uniqueEvents',
-      'start-date': '90daysAgo',
+      'start-date': '14daysAgo',
       'end-date': 'yesterday',
 	'filters':'ga:eventCategory=~BrightCove Player;ga:eventAction=~Media Play'
     },
