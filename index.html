@@ -5,7 +5,7 @@
 	<title>Google Analytics Embed</title>
 </head>
 <body>
-<h1>September 9, 2016 2:32:58 PM</h1>
+<h1>September 9, 2016 2:34:13 PM</h1>
 <!-- Step 1: Create the containing elements. -->
 
 <section id="auth-button"></section>
@@ -70,7 +70,7 @@ var ids = 'ga:116625253';
     }
   });
 
-   var adTable = new gapi.analytics.googleCharts.DataChart({
+/*   var adTable = new gapi.analytics.googleCharts.DataChart({
     reportType: 'ga',
     query: {
       'dimensions': 'ga:adGroup',
@@ -97,7 +97,7 @@ var ids = 'ga:116625253';
       container: 'goal-chart'
     }
   });
-
+*/
 
   // Step 6: Hook up the components to work together.
 
@@ -107,7 +107,7 @@ var ids = 'ga:116625253';
 
   });
 
-  viewSelector.on('change', function(ids) {
+/*  viewSelector.on('change', function(ids) {
     var newIds = {
       query: {
         ids: ids
@@ -116,7 +116,7 @@ var ids = 'ga:116625253';
     eventsTable.set(newIds).execute();
 	adTable.set(newIds).execute();
 	goalChart.set(newIds).execute();
-  });
+  }); */
 });
 </script>
 </body>
