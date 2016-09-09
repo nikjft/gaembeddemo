@@ -5,9 +5,8 @@
 	<title>Google Analytics Embed</title>
 </head>
 <body>
-<h1>3:05</h1>
+<h1>3:15</h1>
 
-<p>var ids = 'ga:116625253';</p>
 
 
 <!-- Step 1: Create the containing elements. -->
@@ -57,8 +56,8 @@ gapi.analytics.ready(function() {
       'metrics': 'ga:uniqueEvents',
       'start-date': '90daysAgo',
       'end-date': 'yesterday',
-      'filters':'ga:eventCategory==BrightCove%20Player'
-    },
+	'filters':'ga:eventCategory=~BrightCove Player;ga:eventAction=~Media Play'
+	    },
     chart: {
       type: 'LINE',
       container: 'timeline'
@@ -76,7 +75,7 @@ gapi.analytics.ready(function() {
       'metrics': 'ga:uniqueEvents',
       'start-date': '90daysAgo',
       'end-date': 'yesterday',
-	'filters':'ga:eventCategory=~BrightCove Player'
+	'filters':'ga:eventCategory=~BrightCove Player;ga:eventAction=~Media Play'
     },
     chart: {
       type: 'TABLE',
