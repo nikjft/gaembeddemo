@@ -38,10 +38,11 @@ gapi.analytics.ready(function() {
 
   // Step 4: Create the view selector.
 
+  /*
   var viewSelector = new gapi.analytics.ViewSelector({
     container: 'view-selector'
   });
-
+*/
   // Step 5: Create the chart.
 
 // ga:eventCategory
@@ -56,6 +57,7 @@ gapi.analytics.ready(function() {
   var eventsTable = new gapi.analytics.googleCharts.DataChart({
     reportType: 'ga',
     query: {
+    	'ids':'119773904',
       'dimensions': 'ga:eventCategory,ga:eventAction',
       'metrics': 'ga:totalEvents,ga:uniqueEvents',
       'start-date': '30daysAgo',
