@@ -52,7 +52,7 @@ gapi.analytics.ready(function() {
       'ids': 'ga:116625253',
       'dimensions': 'ga:date',
       'metrics': 'ga:sessions',
-      'start-date': '30daysAgo',
+      'start-date': '90daysAgo',
       'end-date': 'yesterday',
     },
     chart: {
@@ -62,6 +62,23 @@ gapi.analytics.ready(function() {
   });
 
     timeline.execute();
+
+
+  var eventsTable = new gapi.analytics.googleCharts.DataChart({
+    reportType: 'ga',
+    query: {
+      'dimensions': 'ga:eventCategory,ga:eventAction',
+      'metrics': 'ga:totalEvents,ga:uniqueEvents',
+      'start-date': '90daysAgo',
+      'end-date': 'yesterday',
+    },
+    chart: {
+      type: 'TABLE',
+      container: 'events-table'
+    }
+  });
+  
+  eventsTable.execute();
 
 
 });
