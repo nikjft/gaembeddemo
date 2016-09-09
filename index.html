@@ -101,7 +101,9 @@ var ids = 'ga:119773904';
   // Step 6: Hook up the components to work together.
 
   gapi.analytics.auth.on('success', function(response) {
-    viewSelector.execute();
+//    viewSelector.execute();
+        eventsTable.set(ids).execute();
+
   });
 
   viewSelector.on('change', function(ids) {
