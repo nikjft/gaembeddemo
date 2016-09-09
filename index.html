@@ -101,10 +101,10 @@ gapi.analytics.ready(function() {
   // Step 6: Hook up the components to work together.
 
   gapi.analytics.auth.on('success', function(response) {
-    viewSelector.execute();
+    //viewSelector.execute();
     eventsTable.set(newIds).execute();
   });
-
+/*
   viewSelector.on('change', function(ids) {
     var newIds = {
       query: {
@@ -114,6 +114,7 @@ gapi.analytics.ready(function() {
     eventsTable.set(newIds).execute();
 	adTable.set(newIds).execute();
 	goalChart.set(newIds).execute();
+	*/
   });
 });
 </script>
