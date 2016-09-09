@@ -68,7 +68,7 @@ gapi.analytics.ready(function() {
       container: 'events-table'
     }
   });
-
+/*
    var adTable = new gapi.analytics.googleCharts.DataChart({
     reportType: 'ga',
     query: {
@@ -96,12 +96,13 @@ gapi.analytics.ready(function() {
       container: 'goal-chart'
     }
   });
-
+*/
 
   // Step 6: Hook up the components to work together.
 
   gapi.analytics.auth.on('success', function(response) {
     viewSelector.execute();
+    eventsTable.set(newIds).execute();
   });
 
   viewSelector.on('change', function(ids) {
